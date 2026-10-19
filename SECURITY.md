@@ -22,7 +22,6 @@ usually get before admin consent. The step-by-step setup is in [claude.md](claud
 | | |
 |---|---|
 | Name in Entra | INQULA MCP |
-| Application (client) ID | `4bd6bd82-0630-4d49-ab73-f2c3b69396c9` |
 | Owner | Inqula AS. Registered as a multi-tenant application in Inqula's own Entra ID, so each customer consents to the same app without a new registration |
 | Client type | **Claude:** public client with PKCE, no client secret. **Copilot Studio:** requires a client secret, issued by Inqula to your organisation. In both cases the client ID is public and grants nothing on its own |
 | Connector address | `https://ai.inqula.com/t/<your-organisation>/mcp` |
