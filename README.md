@@ -17,6 +17,9 @@ This allows authorised users to work with INQULA from supported AI tools while I
 The AI assistant does not replace INQULA's access control.
 Each request is authenticated and evaluated against the user's INQULA permissions. The user can only access functionality and data the user is authorised to access in INQULA.
 Organisations can also control whether use of the INQULA MCP application is permitted.
+## INQULA Skills
+INQULA Skills provide ready-made instructions for using AI assistants together with INQULA's MCP tools for specific tasks and workflows.
+Available skills are published in the skills directory.
 ## Repository Structure
 ```INQULA-connect/
 ├── README.md
