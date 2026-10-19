@@ -18,17 +18,13 @@ The AI assistant does not replace INQULA's access control.
 Each request is authenticated and evaluated against the user's INQULA permissions. The user can only access functionality and data the user is authorised to access in INQULA.
 Organisations can also control whether use of the INQULA MCP application is permitted.
 ## Repository Structure
-INQULA-connect/
-
+```INQULA-connect/
 ├── README.md
-
 ├── SECURITY.md
-
 ├── identity/
-
-      entra_id.md
-└── ai/
-
-      copilot.md
-      
-      claude.md
+│   └── entra_id.md
+├── ai/
+│   ├── copilot.md
+│   └── claude.md
+└── skills/
+    └── README.md```
