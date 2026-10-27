@@ -26,8 +26,9 @@ having none at all.
 
 You also receive from Inqula:
 
-- your connector address, containing your own short name:
-  `https://ai.inqula.com/t/<your-organisation>/mcp`
+- your connector address, containing a random route id assigned to your organisation (not your
+  organisation's name, so the address does not reveal that you use Inqula):
+  `https://ai.inqula.com/t/<your-route-id>/mcp`
 - a **client secret** for Copilot
 
 ## Step 1 — Your IT administrator approves the app
@@ -55,7 +56,7 @@ Protocol**.
 |---|---|
 | Server name | Anything, but **unique in the environment** — see below |
 | Server description | `Inqula GRC — risk, deviations, measures, controls and compliance` |
-| Server URL | `https://ai.inqula.com/t/<your-organisation>/mcp` |
+| Server URL | `https://ai.inqula.com/t/<your-route-id>/mcp` |
 | Authentication | **OAuth 2.0** |
 | Configuration type | **Manual** |
 | Client ID | `4bd6bd82-0630-4d49-ab73-f2c3b69396c9` |
