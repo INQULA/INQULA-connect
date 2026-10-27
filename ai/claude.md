@@ -26,10 +26,11 @@ Three things must be in place. Your Inqula contact confirms all of them:
 To register your tenant, Inqula needs your **Directory (tenant) ID**, found on the overview page
 of Microsoft Entra admin center.
 
-You then receive your connector address, which contains your own short name:
+You then receive your connector address. It contains a random route id assigned to your
+organisation, not your organisation's name, so the address does not reveal that you use Inqula:
 
 ```
-https://ai.inqula.com/t/<your-organisation>/mcp
+https://ai.inqula.com/t/<your-route-id>/mcp
 ```
 
 ### Step 1 — Your IT administrator approves the app
@@ -86,7 +87,7 @@ connect.
 
 | Field | Value |
 |---|---|
-| URL | `https://ai.inqula.com/t/<your-organisation>/mcp` |
+| URL | `https://ai.inqula.com/t/<your-route-id>/mcp` |
 | Authentication | *Always required* — Claude detects this |
 | OAuth client | *Use your own OAuth client* — Claude detects this too |
 | Client ID | `4bd6bd82-0630-4d49-ab73-f2c3b69396c9` |
@@ -94,7 +95,7 @@ connect.
 
 Two fields decide whether this works.
 
-**The URL must contain `/t/<your-organisation>`.** Without that segment you are sent to Inqula's
+**The URL must contain `/t/<your-route-id>`, exactly as you received it.** Without that segment you are sent to Inqula's
 own customer directory, where your work account does not exist, and the sign-in fails with a
 generic authorization error.
 
@@ -180,7 +181,7 @@ approval link above.
 (Step 2) and this user is not in the assigned group. Add them in Entra.
 
 **"Authorization failed"** — nearly always the address. Check that it contains
-`/t/<your-organisation>` and that the client ID is exactly the one above. If you entered a client
+`/t/<your-route-id>` and that the client ID is exactly the one above. If you entered a client
 secret, remove it: the app does not use one, and supplying one makes the sign-in fail.
 
 **"Method Not Allowed" in a browser** — expected. The address is not a web page; it is an endpoint

@@ -24,7 +24,7 @@ usually get before admin consent. The step-by-step setup is in [claude.md](claud
 | Name in Entra | INQULA MCP |
 | Owner | Inqula AS. Registered as a multi-tenant application in Inqula's own Entra ID, so each customer consents to the same app without a new registration |
 | Client type | **Claude:** public client with PKCE, no client secret. **Copilot Studio:** requires a client secret, issued by Inqula to your organisation. In both cases the client ID is public and grants nothing on its own |
-| Connector address | `https://ai.inqula.com/t/<your-organisation>/mcp` |
+| Connector address | `https://ai.inqula.com/t/<your-route-id>/mcp` |
 
 ## Permissions
 
@@ -56,7 +56,9 @@ Three things must be true before anything works:
 
 ### How tokens are checked
 
-- Each customer gets its own address (`/t/<your-organisation>/mcp`). The MCP server accepts a
+- Each customer gets its own address (`/t/<your-route-id>/mcp`). The route id is 128 random bits,
+  not the customer's name: nobody can find out who is an Inqula customer by guessing names, and
+  no public response from the MCP server lists which customers have an address. The MCP server accepts a
   token on that address only if it was **issued by your Entra tenant** (issuer and `tid` are both
   pinned). A valid token from another organisation is rejected.
 - The MCP server accepts only tokens issued **for this application** (audience check). A token
