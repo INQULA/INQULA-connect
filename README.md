@@ -10,6 +10,9 @@ User synchronisation can include all relevant users or be limited to selected En
 ## INQULA External ID
 For organisations that do not use Microsoft Entra ID, or where a direct directory integration is not required.
 INQULA provides authentication through Microsoft Entra External ID.
+## System-to-System Integration
+INQULA's recommendation for connecting INQULA and the organisation's own business systems: short-lived tokens tied to the organisation's own identity platform, least-privilege access, and no shared passwords or keys. Covers APIs and message queues, with guides for Microsoft Entra ID and Google Cloud.
+See [Identity/system_to_system.md](Identity/system_to_system.md).
 ## AI and Model Context Protocol (MCP)
 INQULA exposes supported functionality to AI assistants through the Model Context Protocol (MCP).
 This allows authorised users to work with INQULA from supported AI tools while INQULA continues to enforce the user's access and permissions.
@@ -25,7 +28,8 @@ Available skills are published in the skills directory.
 ├── README.md
 ├── SECURITY.md
 ├── identity/
-│   └── entra_id.md
+│   ├── entra_id.md
+│   └── system_to_system.md
 ├── ai/
 │   ├── copilot.md
 │   └── claude.md
