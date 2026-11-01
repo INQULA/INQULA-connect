@@ -167,6 +167,29 @@ risks and deviations, creating measures, checking compliance status, following u
 user's permissions, in the same layer the portal uses. A user who cannot delete a client in the
 portal cannot delete one through Claude either.
 
+## Large files
+
+Small files can pass through the conversation itself. Larger files should not — a batch of
+procedures during a first migration, or a large document to revise — because every byte would go
+through the model as text. For those, Claude asks Inqula for a **one-time link** and sends or
+fetches the file directly with its own tools, for example `curl` in a shell. The link is valid for
+15 minutes and for one upload or download, and only for the file it was made for. The file goes
+through exactly the same checks and limits as an upload in the portal, and is logged on the
+user's name.
+
+This requires that the environment Claude runs in can reach Inqula's API address — the host in
+the link:
+
+```
+https://api.inqula.com
+```
+
+- **Claude on claude.ai (including Cowork):** an owner adds `api.inqula.com`
+  to the allowed domains under **Organization settings → Capabilities**. Without it, Claude can
+  create the link but not use it, and reports that the host is not allowed.
+- **Claude Code or Claude Desktop on your own machine:** nothing to configure, as long as your
+  network allows the address.
+
 ## Skills
 
 Ready-made skills for Claude live in [`../skills/claude/`](../skills/claude/). Each one states
